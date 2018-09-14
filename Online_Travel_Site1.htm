@@ -245,7 +245,7 @@ document.getElementsByClassName("tablink")[0].click();
           //Deprecated guid()
           var date = new Date();
           customerName = "dhuggins@pagerduty.com";
-          dedupKey = customerName + date.getMinutes();
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
          // alert (customerName);
           var orderValue = '0';
           // Requires jQuery
