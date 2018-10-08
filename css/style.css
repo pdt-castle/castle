@@ -12,7 +12,7 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
 
 .product-details {
   float: left;
-  width: 45%;
+  width: 37%;
 }
 
 .product-price {
