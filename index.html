@@ -181,6 +181,7 @@ Name: <input type="text" name="customerName" id="customer-name" value="Stephanie
     customerName = node.value
 
     //Deprecated guid() 
+    var date = new Date()
     dedupKey = customerName + date.getMinutes() + date.getSeconds()
 
     //alert (customerName);
