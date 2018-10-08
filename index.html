@@ -180,9 +180,8 @@ Name: <input type="text" name="customerName" id="customer-name" value="Stephanie
     node = document.getElementById('customer-name'),
     customerName = node.value
 
-    //Deprecated guid()
-    var date = new Date("1/1/2001");
-     dedupKey = customerName + date.getMinutes() + date.getSeconds();
+    //Deprecated guid() 
+    dedupKey = customerName + date.getMinutes() + date.getSeconds();
 
     //alert (customerName);
 
