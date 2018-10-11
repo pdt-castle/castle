@@ -7,7 +7,7 @@
 var counter = 0
 var timer;
 function countUP () {
- counter = counter + 1;//increment the counter by 1
+ counter = counter + 1400;//increment the counter by 1
  //display the new value in the div
  document.getElementById("timer_container").innerHTML = counter;
  }
@@ -16,8 +16,8 @@ function countUP () {
 <body onload='timer=setInterval("countUP()", 1000 );'>
 <div id="timer_container">0</div>
 <div>
-<button onclick='clearInterval(timer);'>Stop Timer</button>
-<button onclick='timer=setInterval("countUP()", 1000 );'>Continue Timer</button>
+<button onclick='clearInterval(timer);'>Website Cart Up</button>
+<button onclick='timer=setInterval("countUP()", 1000 );'>Website Cart Down</button>
 </div>
 </body>
 </html>
