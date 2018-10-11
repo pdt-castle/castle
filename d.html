@@ -3,7 +3,7 @@
 <html xmlns="[URL]http://www.w3.org/1999/xhtml[/URL]">
 <style>
  p1 {
-  font-size: 70px;
+  font-size: 90px;
      
 }
  button {
@@ -36,14 +36,16 @@ function countUP () {
  counter = counter + 140;//increment the counter by 140
  //display the new value in the div
  document.getElementById("timer_container").innerHTML = counter;
- document.getElementById("timer_container").style.fontSize = "70px";
+ document.getElementById("timer_container").style.fontSize = "90px";
  document.getElementById("timer_container").style.color = "red";
    }
 </script>
 </head>
  <body onload='timer=setInterval("countUP()", 1000 );'>
+  <br>
     <div id="timer_container"><p1>0</p1></div>
-<button onclick='clearInterval(timer);'>Cart Service Up</button>
+ <br>
+  <button onclick='clearInterval(timer);'>Cart Service Up</button>
 <button onclick='timer=setInterval("countUP()", 1000 );'>Cart Service Down</button>
 </div>
 </body>
