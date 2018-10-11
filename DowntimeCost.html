@@ -5,7 +5,7 @@
 <title>Downtime Cost</title>
 <script type="text/javascript">
 var counter = 0
-var timer;
+var Cart;
 function countUP () {
  counter = counter + 140;//increment the counter by 140
  //display the new value in the div
@@ -22,8 +22,8 @@ function countUP () {
    <!-- <h1>Best Buy Click and Collect</h1> -->
 <div id="timer_container">0</div>
 <div>
-<button onclick='clearInterval(timer);'>Stop Timer</button>
-<button onclick='timer=setInterval("countUP()", 1000 );'>Continue Timer</button>
+<button onclick='clearInterval(Cart);'>Stop Cart</button>
+<button onclick='Cart=setInterval("countUP()", 1000 );'>Continue Cart</button>
 </div>
 </body>
 </html>
