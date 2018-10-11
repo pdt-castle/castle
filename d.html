@@ -1,4 +1,34 @@
-<p></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "[URL]http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd[/URL]">
+<html xmlns="[URL]http://www.w3.org/1999/xhtml[/URL]">
+<style>
+ p1 {
+  font-size: 70px;
+     
+}
+ button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+button:hover {background-color: #3e8e41}
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ </style>
+<head>
+<title>Downtime Cost</title>
 <script type="text/javascript">
 var counter = 0
 var timer;
@@ -6,14 +36,15 @@ function countUP () {
  counter = counter + 140;//increment the counter by 140
  //display the new value in the div
  document.getElementById("timer_container").innerHTML = counter;
- timer_container.style.color = 'red'
-  }
+ document.getElementById("timer_container").style.fontSize = "70px";
+ document.getElementById("timer_container").style.color = "red";
+   }
 </script>
-<!-- <img height="85" width="225" src="images/bblogo.png"> --><header class="w3-display-container w3-content w3-hide-small" style="max-width: 1400px;"><img class="w3-image" src="./Online_Travel_Site1_files/bbindexlogo.png" alt="Apollo" width="80%" height="80%" />
-<div class="w3-display-middle" style="width: 65%;"><!-- <h1>Best Buy Click and Collect</h1> -->
-<div id="timer_container">
-<h1>0</h1>
+</head>
+ <body onload='timer=setInterval("countUP()", 1000 );'>
+    <div id="timer_container"><p1>0</p1></div>
+<button onclick='clearInterval(timer);'>Cart Service Up</button>
+<button onclick='timer=setInterval("countUP()", 1000 );'>Cart Service Down</button>
 </div>
-<div><button onclick="clearInterval(timer);">Stop Cart</button> <button onclick="timer=setInterval(&quot;countUP()&quot;, 1000 );">Continue Cart</button></div>
-</div>
-</header>
+</body>
+</html>
