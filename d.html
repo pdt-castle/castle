@@ -1,0 +1,19 @@
+<p></p>
+<script type="text/javascript">
+var counter = 0
+var timer;
+function countUP () {
+ counter = counter + 140;//increment the counter by 140
+ //display the new value in the div
+ document.getElementById("timer_container").innerHTML = counter;
+ timer_container.style.color = 'red'
+  }
+</script>
+<!-- <img height="85" width="225" src="images/bblogo.png"> --><header class="w3-display-container w3-content w3-hide-small" style="max-width: 1400px;"><img class="w3-image" src="./Online_Travel_Site1_files/bbindexlogo.png" alt="Apollo" width="80%" height="80%" />
+<div class="w3-display-middle" style="width: 65%;"><!-- <h1>Best Buy Click and Collect</h1> -->
+<div id="timer_container">
+<h1>0</h1>
+</div>
+<div><button onclick="clearInterval(timer);">Stop Cart</button> <button onclick="timer=setInterval(&quot;countUP()&quot;, 1000 );">Continue Cart</button></div>
+</div>
+</header>
