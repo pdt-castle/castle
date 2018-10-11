@@ -29,17 +29,19 @@ button:active {
  </style>
 <head>
 <title>Downtime Cost</title>
+
 <script type="text/javascript">
 var counter = 0
 var timer;
 function countUP () {
  counter = counter + 140;//increment the counter by 140
  //display the new value in the div
- document.getElementById("timer_container").innerHTML = "$ "+ counter;
+ document.getElementById("timer_container").innerHTML = "-$ "+ counter;
  document.getElementById("timer_container").style.fontSize = "90px";
  document.getElementById("timer_container").style.color = "red";
    }
 </script>
+
 </head>
  <body> 
       <header class="w3-display-container w3-content w3-hide-small" style="max-width:1400px">
