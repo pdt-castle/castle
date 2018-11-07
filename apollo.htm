@@ -324,7 +324,7 @@ document.getElementsByClassName("tablink")[0].click();
             method: "POST",
             url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
             data: eventObject, 
-            success:function(resp){console.log(resp.stringify());}
+            success:function(resp){console.log(JSON.stringify(resp));}
           })
             .done(function( msg ) {
              // alert( "Hello: " + msg );
