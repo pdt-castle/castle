@@ -233,7 +233,7 @@ document.getElementsByClassName("tablink")[0].click();
         function loginErrExample() {
             //alert('In loginErrExample');
           var serviceKey = getParameterByName('service_key');
-          if (!serviceKey) serviceKey = "51d701331bd846818482aecca71b24a2"; /*ML service key*/
+          if (!serviceKey) serviceKey = "25c7766eede1452ca427a2cd12a6d457"; /*ML service key*/
          /* var x = document.getElementById("checkoutError");
           x.style.display = "none";
           document.getElementById("checkoutButton").innerHTML = "Working";*/
@@ -243,9 +243,9 @@ document.getElementsByClassName("tablink")[0].click();
           node = document.getElementById('customer-name'),
           customerName = node.value*/
           //Deprecated guid()
-          var date = new Date("1/1/2001");
-          customerName = "mlivermore@pagerduty.com";
-          dedupKey = customerName + date.getMinutes();
+          var date = new Date();
+          customerName = "dhuggins@pagerduty.com";
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
          // alert (customerName);
           var orderValue = '0';
           // Requires jQuery
@@ -285,15 +285,15 @@ document.getElementsByClassName("tablink")[0].click();
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Unexpected server response detected on the search page, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
+          ' "body": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
           ' "Order Value": ' + orderValue + ', ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Unexpected server response detected on the search page, High Error rates", ' +
+          ' "title": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates", ' +
           ' "event_id": "8125363154448140714", ' +
           ' "tags": "aws-prod, base, env:prod, host:farnsworth, monitor, pd_az:us-west-2c, production, xdb, xtradb", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Search Failure: unexpected server response" ' +
+        ' "description": "[Critical] Live Core Service Failure: unexpected server response" ' +
         '}'
        // alert('part 1 ' + eventObject);
         console.log(eventObject)
@@ -305,7 +305,7 @@ document.getElementsByClassName("tablink")[0].click();
           //  "data":  eventObject,
           //  "headers": {
           //    "Accept": "application/vnd.pagerduty+json;version=2",
-          //    "Authorization": "Token token=V_uHsBDv3G2NxyimTYVg",
+          //    "Authorization": "Token token=25c7766eede1452ca427a2cd12a6d457",
           //  }
           //};
           //$.ajax(settings).done(function (response) {
@@ -327,7 +327,7 @@ document.getElementsByClassName("tablink")[0].click();
             .done(function( msg ) {
              // alert( "Hello: " + msg );
           });
-          alert('Error connecting to search provider.')
+          alert('Error connecting to Apollo Gaming Core Services.')
           return false;
         }
         </script>
