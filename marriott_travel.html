@@ -285,15 +285,15 @@ document.getElementsByClassName("tablink")[0].click();
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
+          ' "body": "[Critical] Unexpected server response detected on the Marriott Core Service, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
           ' "Order Value": ' + orderValue + ', ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates", ' +
+          ' "title": "[Critical] Unexpected server response detected on the Marriott Core Service, High Error rates", ' +
           ' "event_id": "8125363154448140714", ' +
           ' "tags": "aws-prod, base, env:prod, host:farnsworth, monitor, pd_az:us-west-2c, production, xdb, xtradb", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Live Core Service Failure: unexpected server response" ' +
+        ' "description": "[Critical] Marriott Core Service Failure: unexpected server response" ' +
         '}'
        // alert('part 1 ' + eventObject);
         console.log(eventObject)
@@ -327,7 +327,7 @@ document.getElementsByClassName("tablink")[0].click();
             .done(function( msg ) {
              // alert( "Hello: " + msg );
           });
-          alert('Error connecting to Apollo Gaming Core Services.')
+          alert('Error connecting to Marriott Core Services.')
           return false;
         }
         </script>
