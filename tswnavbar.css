@@ -38,7 +38,7 @@
 }
 @-ms-viewport { width: device-width ; }
 @viewport { width: device-width ; }
-@media only screen and (max-width:629px) {
+@media only screen and (max-width:300px) {
 	#tswhamburger {
 		display: inline ;
 		width: 2em ;
