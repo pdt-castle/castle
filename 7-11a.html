@@ -2,16 +2,16 @@
 <link rel="stylesheet" type="text/css" href="tswnavbar.css" />
 
 <form>
-  Store Number:<br>
+Store Number:<br>
   <input type="text" name="storenumber"><br>
 
 </form>
 
 <div id="tswcssbuttons">
 <ul>
-<li><a href="javascript:loginErrExample()">Slurpee</a></li>
-<li><a href="javascript:loginErrExample()">Cash Register</a></li>
-<li><a href="javascript:loginErrExample()">Pinpad / Card Issue</a></li>
+<li><a href="javascript:slurpee()">Slurpee</a></li>
+<li><a href="javascript:cashregister()">Cash Register</a></li>
+<li><a href="javascript:pinpad()">Pinpad / Card Issue</a></li>
 <li><a href="javascript:loginErrExample()">Gas Pump Down</a></li>
 <li><a href="javascript:loginErrExample()">Ice Machine Down</a></li>
 <li><a href="javascript:loginErrExample()">Water Leak</a></li>
@@ -24,69 +24,60 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
-          
-        function loginErrExample() {
-           
-          var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
-            
+function myFunction() {
+  var txt;
+  var person = prompt("Please enter your name:", "Harry Potter");
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = "Hello " + person + "! How are you today?";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+<script>
+        function slurpee() {
+		
+		  var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
           var date = new Date();
           customerName = "dhuggins@pagerduty.com";
           dedupKey = customerName + date.getMinutes() + date.getSeconds();
-        
-          var orderValue = '1000';
-          
+		  
           var eventObject = '{ ' +
-              ' "client_url": "https://rpm.newrelic.com/accounts/1818495/applications/105833762", ' +
+              ' "client_url": "https://www.7-eleven.com", ' +
               ' "service_key"\: "' + serviceKey + '", ' +
               ' "incident_key"\: "' + dedupKey + '", ' +
-              ' "client"\: "New Relic", ' +
-              ' "vendor"\: "New Relic", ' +
+              ' "client"\: "7-Eleven Store Support", ' +
+              ' "vendor"\: "7-Eleven Store Support", ' +
               ' "event_type"\: "trigger", ' +
               ' "contexts"\: [ ' +
               ' {  ' +
-                  ' "src": "https://docs.newrelic.com/sites/default/files/styles/inline_660px/public/thumbnails/image/transactions-ui-alert.png?itok=LgLy0yee", ' +
-                  ' "alt": "Snapshot of metric", ' +
+                  ' "src": "https://cdn.shopify.com/s/files/1/0194/1992/2496/products/Pink-Hero_2048x2048_93fd66c4-d1d3-4b8e-8953-3f5eb8d959c8_360x.jpg?v=1569443930", ' +
+                  ' "alt": "Slurpee", ' +
                   ' "href": "https://s14.postimg.org/knuvhigz5/NRErrors2.png", ' +
                   ' "type": "image" ' +
               ' }, ' +
-
-              ' { ' +
-              ' "text": "Conference URL (Zoom)", ' +
-              ' "href": "https://pagerduty.zoom.us/j/5080555253", ' +
-              ' "type": "link" ' +
-              ' }, ' +
-
-            '{' +
-            '  "text": "Conference Dial (Zoom)",  ' +
-            '  "href": "tel:+442036950088,,5080555253#",  ' +
-            '  "type": "link"  ' +
-            '},' +
-          '{' +
-            ' "text": "Monitor Status", ' +
-            ' "href": "https://appp.datadoghq.com/monitors#72563?to_ts=1452282540000&group=host%3Aprod-web-xdb09&from_ts=1452281340000", ' +
-            ' "type": "link" ' +
-          '},' +
           '{ ' +
-          ' "text": "Triggered Monitors", ' +
-          '  "href": "https://rpm.newrelic.com/accounts/1818495/applications/105833762", ' +
+          ' "text": "Store ID", ' +
+          '  "href": "https://www.7-eleven.com/locator", ' +
           '  "type": "link" ' +
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
-          ' "Order Value": ' + orderValue + ', ' +
+          ' "body": "[Critical] Slurpee Machine Down" , ' +
+          ' "Order Value": "$500", ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Unexpected server response detected on the Live Core Service, High Error rates", ' +
+          ' "title": "[Critical] Slurpee Machine Down", ' +
           ' "event_id": "8125363154448140714", ' +
-          ' "tags": "aws-prod, base, env:prod, host:farnsworth, monitor, pd_az:us-west-2c, production, xdb, xtradb", ' +
+          ' "tags": "7-Eleven, slurpee, store", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Live Core Service Failure: unexpected server response" ' +
+        ' "description": "[Critical] Slurpee Machine Down" ' +
         '}'
        
         console.log(eventObject)
 
-       
           $.ajax({
             method: "POST",
             url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
@@ -94,10 +85,124 @@
             success:function(resp){console.log(JSON.stringify(resp));}
           })
             .done(function( msg ) {
-             
+          });
+		  window.prompt('Confirm Store ID.')
+          alert('Slurpee Machine Down Reported .')
+          return false;
+        }
+        </script>
+		
+		<script>
+        function cashregister() {
+           
+          var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
+          var date = new Date();
+          customerName = "dhuggins@pagerduty.com";
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
+		  
+          var eventObject = '{ ' +
+              ' "client_url": "https://www.7-eleven.com", ' +
+              ' "service_key"\: "' + serviceKey + '", ' +
+              ' "incident_key"\: "' + dedupKey + '", ' +
+              ' "client"\: "7-Eleven Store Support", ' +
+              ' "vendor"\: "7-Eleven Store Support", ' +
+              ' "event_type"\: "trigger", ' +
+              ' "contexts"\: [ ' +
+              ' {  ' +
+                  ' "src": "https://www.7-eleven.com/sites/default/files/2018-09/transact-min.jpg", ' +
+                  ' "alt": "register", ' +
+                  ' "href": "https://s14.postimg.org/knuvhigz5/NRErrors2.png", ' +
+                  ' "type": "image" ' +
+              ' }, ' +
+          '{ ' +
+          ' "text": "Store ID", ' +
+          '  "href": "https://www.7-eleven.com/locator", ' +
+          '  "type": "link" ' +
+          ' } ' +
+          ' ], ' +
+        ' "details": { ' +
+          ' "body": "[Critical] Cash Register Down" , ' +
+          ' "Order Value": "$500", ' +
+          ' "priority": "High", ' +
+          ' "title": "[Critical] Cash Register Down", ' +
+          ' "event_id": "8125363154448140714", ' +
+          ' "tags": "7-Eleven, slurpee, store", ' +
+          ' "Customer": "'+ customerName + '" ' +
+          ' }, ' +
+        ' "description": "[Critical] Cash Register Down" ' +
+        '}'
+       
+        console.log(eventObject)
+
+          $.ajax({
+            method: "POST",
+            url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+            data: eventObject, 
+            success:function(resp){console.log(JSON.stringify(resp));}
+          })
+            .done(function( msg ) {
           });
 
-          alert('Error connecting to Apollo Gaming Core Services.')
+		  window.prompt('Confirm Store ID.')
+          alert('Cash Register Down Reported .')
           return false;
+        }
+        </script>
+		
+		<script>
+        function pinpad() {
+           
+          var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
+          var date = new Date();
+          customerName = "dhuggins@pagerduty.com";
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
+		  
+          var eventObject = '{ ' +
+              ' "client_url": "https://www.7-eleven.com", ' +
+              ' "service_key"\: "' + serviceKey + '", ' +
+              ' "incident_key"\: "' + dedupKey + '", ' +
+              ' "client"\: "7-Eleven Store Support", ' +
+              ' "vendor"\: "7-Eleven Store Support", ' +
+              ' "event_type"\: "trigger", ' +
+              ' "contexts"\: [ ' +
+              ' {  ' +
+                  ' "src": "https://www.7-eleven.com/sites/default/files/2018-09/transact-min.jpg", ' +
+                  ' "alt": "register", ' +
+                  ' "href": "https://s14.postimg.org/knuvhigz5/NRErrors2.png", ' +
+                  ' "type": "image" ' +
+              ' }, ' +
+          '{ ' +
+          ' "text": "Store ID", ' +
+          '  "href": "https://www.7-eleven.com/locator", ' +
+          '  "type": "link" ' +
+          ' } ' +
+          ' ], ' +
+        ' "details": { ' +
+          ' "body": "[Critical] Pinpad Issue" , ' +
+          ' "Order Value": "$500", ' +
+          ' "priority": "High", ' +
+          ' "title": "[Critical] Pinpad Issue", ' +
+          ' "event_id": "8125363154448140714", ' +
+          ' "tags": "7-Eleven, slurpee, store", ' +
+          ' "Customer": "'+ customerName + '" ' +
+          ' }, ' +
+        ' "description": "[Critical] Pinpad Issue" ' +
+        '}'
+       
+        console.log(eventObject)
+
+          $.ajax({
+            method: "POST",
+            url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+            data: eventObject, 
+            success:function(resp){console.log(JSON.stringify(resp));}
+          })
+            .done(function( msg ) {
+          });
+
+          window.prompt('Confirm Store ID.')
+		  alert('Pinpad Issue Reported. ')
+          return false;
+		  
         }
         </script>
