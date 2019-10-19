@@ -1,18 +1,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, , shrink-to-fit=no" />
 <link rel="stylesheet" type="text/css" href="tswnavbar.css" />
 
+<form>
+  Store Number:<br>
+  <input type="text" name="storenumber"><br>
+
+</form>
+
 <div id="tswcssbuttons">
 <ul>
-<li><a href="">Slurpee</a></li>
-<li><a href="">Cash Register</a></li>
-<li><a href="">Pinpad / Card Issue</a></li>
-<li><a href="">Gas Pump Down</a></li>
-<li><a href="">Ice Machine Down</a></li>
-<li><a href="">Water Leak</a></li>
-<li><a href="">Coffee Issue</a></li>
-<li><a href="">Other</a></li>
-<button type="button" onclick="tsw_open_demo_window();">Open demo in a new window/tab</button>
-<button type="button" onclick="loginErrExample();">Close current window if possible</button>
+<li><a href="javascript:loginErrExample()">Slurpee</a></li>
+<li><a href="javascript:loginErrExample()">Cash Register</a></li>
+<li><a href="javascript:loginErrExample()">Pinpad / Card Issue</a></li>
+<li><a href="javascript:loginErrExample()">Gas Pump Down</a></li>
+<li><a href="javascript:loginErrExample()">Ice Machine Down</a></li>
+<li><a href="javascript:loginErrExample()">Water Leak</a></li>
+<li><a href="javascript:loginErrExample()">Coffee Issue</a></li>
 </ul>
 
 
@@ -21,35 +24,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
-        function guid() {
-          function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-          }
-          return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-            s4() + '-' + s4() + s4() + s4();
-        }
-        function getParameterByName(name, url) {
-          if (!url) url = window.location.href;
-          name = name.replace(/[\[\]]/g, "\\$&");
-          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-              results = regex.exec(url);
-          if (!results) return null;
-          if (!results[2]) return '';
-          return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-       
+          
         function loginErrExample() {
            
-          var serviceKey = getParameterByName('service_key');
-          if (!serviceKey) serviceKey = "25c7766eede1452ca427a2cd12a6d457"; /*ML service key*/
-         
+          var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
+            
           var date = new Date();
           customerName = "dhuggins@pagerduty.com";
           dedupKey = customerName + date.getMinutes() + date.getSeconds();
         
-          var orderValue = '0';
+          var orderValue = '1000';
           
           var eventObject = '{ ' +
               ' "client_url": "https://rpm.newrelic.com/accounts/1818495/applications/105833762", ' +
