@@ -34,19 +34,6 @@ Store Number:<br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
-function myFunction() {
-  var txt;
-  var person = prompt("Please enter your name:", "Harry Potter");
-  if (person == null || person == "") {
-    txt = "User cancelled the prompt.";
-  } else {
-    txt = "Hello " + person + "! How are you today?";
-  }
-  document.getElementById("demo").innerHTML = txt;
-}
-</script>
-
-<script>
         function slurpee() {
 		
 		  var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
@@ -75,15 +62,15 @@ function myFunction() {
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Slurpee Machine Down" , ' +
+          ' "body": "[Franchise Alert] Slurpee Machine Down" , ' +
           ' "Order Value": "$500", ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Slurpee Machine Down", ' +
+          ' "title": "[Franchise Alert] Slurpee Machine Down", ' +
           ' "event_id": "8125363154448140714", ' +
           ' "tags": "7-Eleven, slurpee, store", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Slurpee Machine Down" ' +
+        ' "description": "[Franchise Alert] Slurpee Machine Down" ' +
         '}'
        
         console.log(eventObject)
@@ -131,15 +118,15 @@ function myFunction() {
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Cash Register Down" , ' +
+          ' "body": "[Franchise Alert] Cash Register Down" , ' +
           ' "Order Value": "$500", ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Cash Register Down", ' +
+          ' "title": "[Franchise Alert] Cash Register Down", ' +
           ' "event_id": "8125363154448140714", ' +
           ' "tags": "7-Eleven, slurpee, store", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Cash Register Down" ' +
+        ' "description": "[Franchise Alert] Cash Register Down" ' +
         '}'
        
         console.log(eventObject)
@@ -188,15 +175,15 @@ function myFunction() {
           ' } ' +
           ' ], ' +
         ' "details": { ' +
-          ' "body": "[Critical] Pinpad Issue" , ' +
+          ' "body": "[Franchise Alert] Pinpad Issue" , ' +
           ' "Order Value": "$500", ' +
           ' "priority": "High", ' +
-          ' "title": "[Critical] Pinpad Issue", ' +
+          ' "title": "[Franchise Alert] Pinpad Issue", ' +
           ' "event_id": "8125363154448140714", ' +
           ' "tags": "7-Eleven, slurpee, store", ' +
           ' "Customer": "'+ customerName + '" ' +
           ' }, ' +
-        ' "description": "[Critical] Pinpad Issue" ' +
+        ' "description": "[Franchise Alert] Pinpad Issue" ' +
         '}'
        
         console.log(eventObject)
