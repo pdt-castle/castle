@@ -20,6 +20,7 @@ Store Number:<br>
 <div id="tswcssbuttons">
 <ul>
 <li><a href="javascript:slurpee()">Slurpee</a></li>
+<li><a href="javascript:networkissue()">Network Issue</a></li>
 <li><a href="javascript:cashregister()">Cash Register</a></li>
 <li><a href="javascript:pinpad()">Pinpad / Card Issue</a></li>
 <li><a href="javascript:loginErrExample()">Gas Pump Down</a></li>
@@ -85,6 +86,62 @@ Store Number:<br>
           });
 		  window.prompt('Confirm Store ID.')
           alert('Slurpee Machine Down Reported .')
+          return false;
+        }
+        </script>
+
+<script>
+        function networkissue() {
+		
+		  var serviceKey = "25c7766eede1452ca427a2cd12a6d457";
+          var date = new Date();
+          customerName = "dhuggins@pagerduty.com";
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
+		  
+          var eventObject = '{ ' +
+              ' "client_url": "https://www.7-eleven.com", ' +
+              ' "service_key"\: "' + serviceKey + '", ' +
+              ' "incident_key"\: "' + dedupKey + '", ' +
+              ' "client"\: "7-Eleven Store Support", ' +
+              ' "vendor"\: "7-Eleven Store Support", ' +
+              ' "event_type"\: "trigger", ' +
+              ' "contexts"\: [ ' +
+              ' {  ' +
+                  ' "src": "https://darrenhuggins.github.io/images/7-eleven-scale.png", ' +
+                  ' "alt": "Network", ' +
+                  ' "href": "https://s14.postimg.org/knuvhigz5/NRErrors2.png", ' +
+                  ' "type": "image" ' +
+              ' }, ' +
+          '{ ' +
+          ' "text": "Store ID", ' +
+          '  "href": "https://www.7-eleven.com/locator", ' +
+          '  "type": "link" ' +
+          ' } ' +
+          ' ], ' +
+        ' "details": { ' +
+          ' "body": "[Franchise Alert] Network Issue" , ' +
+          ' "Order Value": "$500", ' +
+          ' "priority": "High", ' +
+          ' "title": "[Franchise Alert] Network Issue", ' +
+          ' "event_id": "8125363154448140714", ' +
+          ' "tags": "7-Eleven, slurpee, store", ' +
+          ' "Customer": "'+ customerName + '" ' +
+          ' }, ' +
+        ' "description": "[Franchise Alert] Network Issue" ' +
+        '}'
+       
+        console.log(eventObject)
+
+          $.ajax({
+            method: "POST",
+            url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+            data: eventObject, 
+            success:function(resp){console.log(JSON.stringify(resp));}
+          })
+            .done(function( msg ) {
+          });
+		  window.prompt('Confirm Store ID.')
+          alert('Network Issue Reported .')
           return false;
         }
         </script>
