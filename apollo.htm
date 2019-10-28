@@ -54,10 +54,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     </div>
 
     <div id="Hotel" class="w3-container w3-white w3-padding-16 myLink" style="display: none;">
-      <h3>Find the best hotels</h3>
-      <p>Book a hotel with us and get the best fares and promotions.</p>
-      <p>We know hotels - we know comfort.</p>
-      <p><button class="w3-button w3-dark-grey">Search Hotels</button></p>
+      <h3>Play Online </h3>
+      <p>Always available - always on or yopur money back!</p>
+      <p><button class="w3-button w3-dark-grey" onclick="joinErrExample('Login');return(false);">Join Now</button></p>
     </div>
 
     <div id="Car" class="w3-container w3-white w3-padding-16 myLink" style="display: none;">
@@ -332,6 +331,145 @@ document.getElementsByClassName("tablink")[0].click();
 
           alert('Error connecting to Apollo Gaming Core Services.')
           return false;
+		 
+        }
+        </script>
+
+<!--2nd Incident-->
+<script>
+        function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+        }
+        function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        /*function updateResponsePanel()
+        {
+          var x = document.getElementById("checkoutError");
+          x.style.display = "block";
+          document.getElementById("checkoutButton").innerHTML = "Checkout";
+        }*/
+        function joinErrExample() {
+            //alert('In loginErrExample');
+          var serviceKey = getParameterByName('service_key');
+          if (!serviceKey) serviceKey = "8e700ffee976469b84620b98f631d23e"; /*ML service key*/
+         /* var x = document.getElementById("checkoutError");
+          x.style.display = "none";
+          document.getElementById("checkoutButton").innerHTML = "Working";*/
+          //setTimeout(updateResponsePanel, 4000);
+          /*var node = document.getElementById('cart-total'),
+          orderValue = node.innerHTML
+          node = document.getElementById('customer-name'),
+          customerName = node.value*/
+          //Deprecated guid()
+          var date = new Date();
+          customerName = "dhuggins@pagerduty.com";
+          dedupKey = customerName + date.getMinutes() + date.getSeconds();
+         // alert (customerName);
+          var orderValue = '0';
+          // Requires jQuery
+          var eventObject = '{ ' +
+              ' "client_url": "https://rpm.newrelic.com/accounts/1818495/applications/105833762", ' +
+              ' "service_key"\: "' + serviceKey + '", ' +
+              ' "incident_key"\: "' + dedupKey + '", ' +
+              ' "client"\: "New Relic", ' +
+              ' "vendor"\: "New Relic", ' +
+              ' "event_type"\: "trigger", ' +
+              ' "contexts"\: [ ' +
+              ' {  ' +
+                  ' "src": "https://docs.newrelic.com/sites/default/files/styles/inline_660px/public/thumbnails/image/transactions-ui-alert.png?itok=LgLy0yee", ' +
+                  ' "alt": "Snapshot of metric", ' +
+                  ' "href": "https://s14.postimg.org/knuvhigz5/NRErrors2.png", ' +
+                  ' "type": "image" ' +
+              ' }, ' +
+
+              ' { ' +
+              ' "text": "Conference URL (Zoom)", ' +
+              ' "href": "https://pagerduty.zoom.us/j/5080555253", ' +
+              ' "type": "link" ' +
+              ' }, ' +
+
+            '{' +
+            '  "text": "Conference Dial (Zoom)",  ' +
+            '  "href": "tel:+442036950088,,5080555253#",  ' +
+            '  "type": "link"  ' +
+            '},' +
+          '{' +
+            ' "text": "Monitor Status", ' +
+            ' "href": "https://appp.datadoghq.com/monitors#72563?to_ts=1452282540000&group=host%3Aprod-web-xdb09&from_ts=1452281340000", ' +
+            ' "type": "link" ' +
+          '},' +
+          '{ ' +
+          ' "text": "Triggered Monitors", ' +
+          '  "href": "https://rpm.newrelic.com/accounts/1818495/applications/105833762", ' +
+          '  "type": "link" ' +
+          ' } ' +
+          ' ], ' +
+        ' "details": { ' +
+          ' "body": "[Major] Unexpected database response detected on the Live Core Service, High Error rates <br/> Object Reference Not Set and ADO.NET Connection pool exceeded errors detected" , ' +
+          ' "Order Value": ' + orderValue + ', ' +
+          ' "priority": "High", ' +
+          ' "title": "[Major] Unexpected database response detected on the Live Core Service, High Error rates", ' +
+          ' "event_id": "8125363154448140714", ' +
+          ' "tags": "aws-prod, base, env:prod, host:farnsworth, monitor, pd_az:us-west-2c, production, xdb, xtradb", ' +
+          ' "Customer": "'+ customerName + '" ' +
+          ' }, ' +
+        ' "description": "[Major] Live Core Service Failure: unexpected database response" ' +
+        '}'
+       // alert('part 1 ' + eventObject);
+        console.log(eventObject)
+
+       // alert('Part 2 ' + eventObject);
+        //    ' "Customer Name": ' + customerName + ', ' +
+          //var settings = {
+          //  "url": "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+          //  "method": "POST",
+          //  "data":  eventObject,
+          //  "headers": {
+          //    "Accept": "application/vnd.pagerduty+json;version=2",
+          //    "Authorization": "Token token=25c7766eede1452ca427a2cd12a6d457",
+          //  }
+          //};
+          //$.ajax(settings).done(function (response) {
+          //  console.log(response);
+          //  $("#responseText").text(JSON.stringify(response));
+          //});
+          //$.ajax({
+          //  type: "POST",
+          //  url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+          //  data: eventObject,
+          //  success: null,
+          //  dataType: "json"
+          //});
+          $.ajax({
+            method: "POST",
+            url: "https://events.pagerduty.com/generic/2010-04-15/create_event.json",
+            data: eventObject, 
+            success:function(resp){console.log(JSON.stringify(resp));}
+          })
+            .done(function( msg ) {
+             // alert( "Hello: " + msg );
+          });
+
+          alert('Error joining matchmaking server.')
+          return false;
+		  
+		 
+			//Test to trigger 2nd Incident
+			
+		  //end of added test
         }
         </script>
 
