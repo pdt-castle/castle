@@ -4,7 +4,7 @@
 <style>
  p1 {
   font-size: 90px;
-     
+
 }
  button {
   display: inline-block;
@@ -41,12 +41,12 @@ function countUP () {
    }
 </script>
 </head>
- <body onload='timer=setInterval("countUP()", 1000 );'>
+ <body onload='timer=setInterval("countUP()", 500 );'>
   <br>
     <div id="timer_container"><p1>0</p1></div>
  <br>
   <button onclick='clearInterval(timer);'>Cart Service Up</button>
-<button onclick='timer=setInterval("countUP()", 1000 );'>Cart Service Down</button>
+<button onclick='timer=setInterval("countUP()", 500 );'>Cart Service Down</button>
 </div>
 </body>
 </html>
